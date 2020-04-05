@@ -1,19 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <div class="row">
+        <div class="col-2">
+          <Logo />  
+        </div>
+        <div class="col-8">
+          <Title :msg=welcome_msg />
+        </div>
+        <MainNavbar />
+        <router-view />
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// @ is an alias to /src
+import Title from "@/components/Title.vue";
+import Logo from "@/components/Logo.vue";
+import MainNavbar from "@/components/MainNavbar.vue";
 
 export default {
-  name: 'App',
+  data() {
+    return {
+      welcome_msg: 'mi Bloc'
+    }
+  },
   components: {
-    HelloWorld
+    Title,
+    Logo,
+    MainNavbar
   }
-}
+};
 </script>
 
 <style>
@@ -23,6 +42,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.border-top-bottom {
+  border-top: solid black 1px;
+  border-bottom: solid black 1px;
 }
 </style>
