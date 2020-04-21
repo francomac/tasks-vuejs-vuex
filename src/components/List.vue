@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-8 mx-auto">
       <b-list-group v-bind:key="item.id" v-for="item in items">
-        <ListItem v-bind:data="item"></ListItem>
+        <ListItem v-bind:data="item" v-on:del-todo="deleteItem"></ListItem>
       </b-list-group>
     </div>
   </div>
@@ -28,7 +28,14 @@ export default {
       .get("https://jsonplaceholder.typicode.com/todos?_limit=5")
       .then(res => (this.items = res.data))
       .catch(err => console.log(err));
+  },
+  methods: {
+    deleteItem(id) {
+      console.log(id)
+      this.items = this.items.filter(todo => todo.id !== id)
+    }
   }
+
 };
 </script>
 

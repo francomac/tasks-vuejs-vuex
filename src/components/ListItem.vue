@@ -1,8 +1,12 @@
 <template>
-  <b-list-group-item button>{{data.title}}</b-list-group-item>
+  <b-list-group-item button >
+    {{data.title}}
+    <deleteButton v-on:del-todo="$emit('del-todo', data.id)"></deleteButton>
+  </b-list-group-item>
 </template>
 
 <script>
+import DeleteButton from "@/components/DeleteButton.vue";
 export default {
   name: "ListItem",
   props: {
@@ -10,6 +14,9 @@ export default {
       id: String,
       title: String
     }
+  },
+  components: {
+    DeleteButton
   }
 };
 </script>
