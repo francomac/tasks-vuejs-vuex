@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-8 mx-auto">
+    <div class="col-12 mx-auto">
       <b-list-group v-bind:key="item.id" v-for="item in items">
         <ListItem v-bind:data="item" v-on:del-todo="deleteItem"></ListItem>
       </b-list-group>
@@ -31,7 +31,6 @@ export default {
   },
   methods: {
     deleteItem(id) {
-      console.log(id)
       this.items = this.items.filter(todo => todo.id !== id)
     }
   }

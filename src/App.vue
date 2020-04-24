@@ -17,9 +17,13 @@
 
 <script>
 // @ is an alias to /src
-import Title from "@/components/Title.vue";
-import Logo from "@/components/Logo.vue";
-import MainNavbar from "@/components/MainNavbar.vue";
+// import Title from "@/components/Title.vue";
+// import Logo from "@/components/Logo.vue";
+// import MainNavbar from "@/components/MainNavbar.vue";
+
+// This approach to register base components 
+// is more effective and clean
+import BaseHeader from "./components/BaseHeader"
 
 export default {
   data() {
@@ -28,9 +32,10 @@ export default {
     }
   },
   components: {
-    Title,
-    Logo,
-    MainNavbar
+    // Title,
+    // Logo,
+    // MainNavbar
+    ...BaseHeader
   }
 };
 </script>

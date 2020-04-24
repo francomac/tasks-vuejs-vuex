@@ -1,10 +1,10 @@
 <template>
-  <b-button class="ml-3" @click="$emit('del-todo')" variant="danger">Delete</b-button>
+  <b-button class="ml-3" @click="$emit('edit-todo')" variant="warning">Edit</b-button>
 </template>
 
 <script>
 export default {
-  name: "DeleteButton",
+  name: "EditButton",
 
     data() {
       return {
