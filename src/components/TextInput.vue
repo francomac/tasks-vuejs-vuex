@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-2">
     <b-form v-on:submit.prevent="addNote">
       <b-form-input
         type="text"
@@ -23,12 +23,14 @@ export default {
     addNote() {
       const newNote = {
         id: uuidv4(),
-        text: this.text,
+        title: this.text,
         complete: false
       };
 
       // send up to parent
       this.$emit("add-note", newNote);
+
+      this.text = '';
     }
   }
 };

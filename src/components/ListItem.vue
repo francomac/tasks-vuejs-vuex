@@ -1,6 +1,8 @@
 <template>
-  <b-list-group-item button >
-    <TextInput v-if="onEditMode" v-bind:text="data.title"></TextInput>
+  <b-list-group-item button class="mb-2">
+
+    <TextInput v-if="onEditMode" v-model="text" v-bind:text="data.title"></TextInput>
+    
     <p>{{data.title}}</p>
     <editButton v-on:edit-todo="setEditMode"></editButton>
     <deleteButton v-on:del-todo="$emit('del-todo', data.id)"></deleteButton>
@@ -20,7 +22,8 @@ export default {
   props: {
     data: {
       id: String,
-      title: String
+      title: String,
+      complete: Boolean
     }
   },
   components: {
@@ -30,12 +33,14 @@ export default {
   },
   data() {
     return {
-      onEditMode: false
+      onEditMode: false,
+      text: ''
     }
   },
-    methods: {
+  methods: {
     setEditMode() {
       this.onEditMode = !this.onEditMode;
+
     }
   }
 };
