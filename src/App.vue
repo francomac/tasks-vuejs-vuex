@@ -26,6 +26,7 @@
 import BaseHeader from "./components/BaseHeader"
 
 export default {
+
   data() {
     return {
       welcome_msg: 'mi Bloc'

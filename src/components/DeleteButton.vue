@@ -1,16 +1,19 @@
 <template>
-  <b-button class="ml-3" @click="$emit('del-todo')" variant="danger">Delete</b-button>
+  <b-button class="ml-3" @click="$emit('del-todo')" variant="danger">
+    Delete
+    <i class="far fa-trash-alt"></i>
+  </b-button>
 </template>
 
 <script>
 export default {
   name: "DeleteButton",
 
-    data() {
-      return {
-        id: String
-      }
-    }
+  data() {
+    return {
+      id: String
+    };
+  }
 };
 </script>
 
